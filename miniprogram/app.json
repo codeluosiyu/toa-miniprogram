@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/tabBar/index/index",
+    "pages/tabBar/product/index",
+    "pages/tabBar/cart/index",
+    "pages/tabBar/user/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#000000",
+    "color": "#C1C1C1",
+    "selectedColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/index/index",
+        "text": "首页",
+        "iconPath": "assets/tabBar/home.png",
+        "selectedIconPath": "assets/tabBar/selhome.png"
+      },
+      {
+        "pagePath": "pages/tabBar/product/index",
+        "text": "分类",
+        "iconPath": "assets/tabBar/collage.png",
+        "selectedIconPath": "assets/tabBar/selcollage.png"
+      },
+      {
+        "pagePath": "pages/tabBar/cart/index",
+        "text": "购物车",
+        "iconPath": "assets/tabBar/shoppingCart.png",
+        "selectedIconPath": "assets/tabBar/selshoppingCart.png"
+      },
+      {
+        "pagePath": "pages/tabBar/user/index",
+        "text": "我的",
+        "iconPath": "assets/tabBar/personal.png",
+        "selectedIconPath": "assets/tabBar/selpersonal.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "subpackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/copyright/index",
+        "pages/wechat/index",
+        "pages/privacy/list/index",
+        "pages/privacy/detail/index"
+      ]
+    },
+    {
+      "root": "packageB",
+      "pages": [
+        "pages/game/list/index",
+        "pages/game/detail/egg/index",
+        "pages/game/detail/nine/index"
+      ]
+    },
+    {
+      "root": "packageC",
+      "pages": [
+        "pages/chat/list/index",
+        "pages/chat/room/index",
+        "pages/chat/user/index"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/tabBar/user/index": {
+      "network": "all",
+      "packages": [
+        "packageA"
+      ]
+    }
+  }
+}

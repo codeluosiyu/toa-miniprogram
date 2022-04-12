@@ -1,0 +1,120 @@
+@import "./public.wxss";
+
+page {
+  letter-spacing: 1rpx;
+  overflow-x: hidden;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.relative {
+  position: relative;
+}
+
+.box_border {
+  box-sizing: border-box;
+}
+
+.w_100 {
+  width: 100vw;
+}
+
+.txt-nowrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+button {
+  opacity: 0;
+}
+
+button::after {
+  border: none;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 遮罩层 */
+.dialog {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+view,
+button,
+text,
+input,
+scroll-view {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: SourceHanSansCN, PingFangSC;
+  font-weight: 400;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.wh100 {
+  width: 100%;
+  height: 100%;
+}
+
+.wordWrap {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.right-icon {
+  width: 24rpx;
+  height: 24rpx;
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  transform: rotate(45deg);
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.footer-x {
+  padding-bottom: 40rpx;
+}
+
+.css-right-icon {
+  width: 7rpx;
+  height: 7rpx;
+  border-top: 2rpx solid #111;
+  border-right: 2rpx solid #111;
+  transform: rotate(45deg);
+}
+
+.css-bottom-icon {
+  width: 7rpx;
+  height: 7rpx;
+  border-bottom: 2rpx solid #111;
+  border-left: 2rpx solid #111;
+  transform: rotate(45deg);
+}
