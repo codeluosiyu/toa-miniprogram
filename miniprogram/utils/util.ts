@@ -152,3 +152,58 @@ export const toast = function (title: string) {
     icon: 'none'
   })
 }
+
+/**
+ * IOS格式时间 转 国际UTC标准时间
+ * @param data
+ * @returns
+ */
+export const iosDateToUtc = (data: string) => {
+  return JSON.parse(
+    JSON.stringify(data).replace(
+      /\/Date\(\-?(\d+)(?:\-|\+)(?:\d+)\)\//g,
+      function () {
+        return new Date(Number(arguments[1]) + 8 * 3600 * 1000)
+          .toISOString()
+          .replace(/^(.*)T(.*)\.\d+Z$/, "$1 $2");
+      }
+    )
+  );
+};
+
+/**
+ * 返回当前时间
+ * @param type
+ * @param addTime
+ * @returns
+ */
+export function returnNowTime(type, addTime) {
+  var dateObj = new Date();
+  var cTime: any = dateObj.getTime();
+  if (addTime) {
+    cTime += addTime;
+  }
+  if (!type) {
+    type = "number";
+  }
+  if (type == "number") {
+    return cTime;
+  }
+  if (type == "YYYYMMDD") {
+    var timeStamp = parseInt(cTime);
+    var date = new Date();
+    if (timeStamp < 90000000000) {
+      date.setTime(timeStamp * 1000);
+    } else {
+      date.setTime(timeStamp);
+    }
+    var y = date.getFullYear();
+    var m: any = date.getMonth() + 1;
+    m = m < 10 ? "0" + m : m;
+    var d: any = date.getDate();
+    d = d < 10 ? "0" + d : d;
+    return y + m + d;
+  }
+  return toDate(cTime / 1000, "str");
+}
+
